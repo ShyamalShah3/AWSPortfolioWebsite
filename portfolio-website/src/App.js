@@ -1,13 +1,17 @@
-import logo from './logo.svg';
-import { NavBar } from './components/NavBar';
+import Layout from './Layout/Layout';
+import { Banner } from './components/Banner/Banner';
+import { NavBar } from './components/Navigation/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-    </div>
+    <Layout>
+      <div className="App">
+        <NavBar />
+        <Banner />
+      </div>
+    </Layout>
   );
 }
 
