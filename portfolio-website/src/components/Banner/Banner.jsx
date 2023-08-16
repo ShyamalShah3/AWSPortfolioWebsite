@@ -9,8 +9,8 @@ export const Banner = () => {
     const [isDeleting, setIsDeleting] = useState(false);
     const toRotate = [ "Cloud Developer ", "Master's Graduate ", "Full Stack Developer ", "Engineer "];
     const [text, setText] = useState('');
-    const period = 10;
-    const initialDelta = 250;
+    const period = 500;
+    const initialDelta = 200;
     const [delta, setDelta] = useState(initialDelta)
 
     useEffect(() => {
@@ -28,14 +28,18 @@ export const Banner = () => {
 
         setText(updatedText);
 
+        if (isDeleting) {
+            setDelta(prevDelta => prevDelta / 2);
+        }
+
         if (!isDeleting && updatedText === fullText) {
             setIsDeleting(true);
             setDelta(period);
-          } else if (isDeleting && updatedText === '') {
+        } else if (isDeleting && updatedText === '') {
             setIsDeleting(false);
             setRotateIndex(rotateIndex + 1);
             setDelta(initialDelta);
-          }
+        }
     }
 
     return (
