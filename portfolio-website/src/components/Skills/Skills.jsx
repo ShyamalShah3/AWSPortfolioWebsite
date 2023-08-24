@@ -1,8 +1,9 @@
 import Carousel from "react-multi-carousel";
 import { Col, Container, Row } from "react-bootstrap";
-import meter1 from "../../assets/img/skills/meter1.svg";
-import meter2 from "../../assets/img/skills/meter2.svg";
-import meter3 from "../../assets/img/skills/meter3.svg";
+import aws from "../../assets/img/skills/aws.svg";
+import python from "../../assets/img/skills/python.svg";
+import react from "../../assets/img/skills/react.svg";
+import html from "../../assets/img/skills/html.svg";
 import backgroundLeft from "../../assets/img/skills/color-sharp-left.png";
 import backgroundRight from "../../assets/img/skills/color-sharp-right.png";
 import "react-multi-carousel/lib/styles.css";
@@ -12,7 +13,7 @@ const SkillItem = ({ skill, image }) => {
     return (
         <div className="item">
             <img src={image } alt="Image" />
-            <h5>{ skill }</h5>
+            <h5 className="item-text">{skill}</h5>
         </div>
     );
 };
@@ -38,10 +39,10 @@ export const Skills = () => {
     };
 
     const skills = [
-        { name: "Web Development", image: meter1 },
-        { name: "Brand Identity", image: meter2 },
-        { name: "Logo Design", image: meter3 },
-        { name: "HTML", image: meter2 },
+        { name: "AWS", image: aws },
+        { name: "Python", image: python },
+        { name: "React", image: react },
+        { name: "HTML", image: html },
     ];
 
     const skillItems = skills.map((skill,index) => (
